@@ -6,11 +6,16 @@ portable: they keep working across Qualtrics accounts and when shared with colla
 
 ## Contents
 
-`img/` holds 16 composite images, each one puzzle: a 3×3 matrix with the bottom-right cell missing,
-and its four answer options labelled A–D beneath.
+Each image is one puzzle: a 3×3 matrix with the bottom-right cell missing, and its four answer
+options labelled A–D beneath.
 
-- `item01.png` … `item15.png` — the 15 fielded puzzles, in presentation order (easy to hard)
-- `example.png` — a worked example shown in the instructions, not scored
+- `img/item01.png` … `img/item15.png` — the 15 fielded puzzles, in presentation order (easy to hard)
+- `img/example.png` — a worked example shown in the instructions, not scored
+- `img/bank/mars_001.png` … `img/bank/mars_080.png` — **all 80 items** of the test form, named by
+  MaRs-IB item number (added in `v3`), so any item can be swapped into a survey without another
+  upload. The 16 items above appear here too, pixel-identical and with the same option order.
+
+No answer keys are published here, deliberately.
 
 Each composite was assembled from the original separate matrix and option images. The option order
 within each puzzle was permuted once under a fixed seed and frozen, because in the source archive the
@@ -21,10 +26,14 @@ correct answer is always the first option; positions are spread 4/4/4/3 across A
 Served through jsDelivr:
 
 ```
-https://cdn.jsdelivr.net/gh/<user>/mars-ib-stimuli@v1/img/item01.png
+https://cdn.jsdelivr.net/gh/<user>/mars-ib-stimuli@v2/img/item01.png
+https://cdn.jsdelivr.net/gh/<user>/mars-ib-stimuli@v3/img/bank/mars_016.png
 ```
 
-**Pin a tag, not a branch.** `@v1` is immutable; `@main` would let the images change under a running
+Tags: `v1` original composites; `v2` adds the drawn 3×3 grid (the version the surveys use); `v3`
+adds the 80-item bank and changes nothing in `v2`'s files.
+
+**Pin a tag, not a branch.** A tag is immutable; `@main` would let the images change under a running
 study.
 
 ## Source and licence
